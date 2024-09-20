@@ -13,7 +13,7 @@ function App() {
 
     function handle() {
         if (!title || !des) {
-            window.alert("Incomplete input");
+            window.alert("Incomplete input : ");
             return;
         }
         setNotes([...notes, { key: count, title: title, des: des }]);
