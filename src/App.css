@@ -1,0 +1,196 @@
+/* App.css */
+
+.App {
+  text-align: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #d8b4e2, #f3e5f5); /* Light purple gradient */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Styling universal selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style body element */
+body {
+  font-family: "Poppins", sans-serif;
+  color: #d8a9a9;
+  position: relative;
+}
+
+/* Adding background symbols */
+body::before {
+  content: "📒📘✏️"; /* Background symbols */
+  font-size: 5rem;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  opacity: 0.1;
+  z-index: 0;
+  transform: rotate(-15deg);
+}
+
+body::after {
+  content: "📒📘✏️🖊️🗒️📚";
+  font-size: 5rem;
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+  opacity: 0.1;
+  z-index: 0;
+  transform: rotate(15deg);
+}
+
+/* Styling card container */
+.card {
+  height: fit-content;
+  min-width: 33rem;
+  max-width: 40rem;
+  background: linear-gradient(135deg, #e6cef9, #b39ddb); 
+  margin: 0 1rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  transform: perspective(1000px) rotateX(10deg) rotateY(-10deg); /* Enhanced 3D */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  padding: 20px;
+  z-index: 1;
+}
+
+.card:hover {
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05); /* Grow on hover */
+  box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3); /* Larger shadow */
+}
+
+/* Styling header */
+.head {
+  position: relative;
+  max-height: fit-content;
+  min-width: 33rem;
+  width: 100%;
+  background: #9575cd; /* Deeper purple */
+  padding: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px 15px 0 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+/* Adding icons to the header */
+.head h1::before {
+  content: "📝"; /* Note emoji */
+  font-size: 2.5rem;
+  margin-right: 10px;
+}
+
+/* Input box and button */
+.add {
+  padding: 5%;
+  text-align: left;
+  padding-left: 6%;
+}
+
+input {
+  margin-right: 1%;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  width: 80%;
+  color: #333;
+  background-color: #f3e5f5; /* Light purple background for inputs */
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: large;
+  color: white;
+  background-color: #ab47bc; /* Bright purple */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+button:hover {
+  transform: translateY(-5px); /* Raised 3D effect */
+  background-color: #8e24aa; /* Darker purple on hover */
+}
+
+/* Style accordion */
+.notes {
+  margin: 5%;
+  text-align: left;
+}
+
+/* Style for accordion items */
+.notes-item {
+  display: flex;
+  z-index: 100;
+  padding: 2%;
+  font-size: larger;
+  margin: 2%;
+  background-color: #eecdec;
+  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  position: relative;
+  padding-left: 40px;
+}
+
+.notes-item:hover {
+  transform: scale(1.08); /* Zoom in on hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35); /* Stronger shadow */
+}
+
+/* Adding a symbol to each note */
+.notes-item::before {
+  content: "🗒️"; /* Sticky note emoji */
+  position: absolute;
+  left: 10px;
+  font-size: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9575cd; /* Light purple */
+}
+
+/* Title and note content styling */
+.notes-item h4 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.notes-item p {
+  color: #060000;
+  font-size: 1rem;
+}
+
+/* Style for remove button */
+button {
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: large;
+  color: #9279d6;
+  background-color: #d289df;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #8e24aa;
+  transform: translateY(-3px);
+}
